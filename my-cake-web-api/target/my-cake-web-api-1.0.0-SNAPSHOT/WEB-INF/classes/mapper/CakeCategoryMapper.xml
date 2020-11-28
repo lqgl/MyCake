@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.monoya.my.cake.web.api.dao.CakeCategoryDao">
+    <sql id="cakeCategoriesJoin">
+        INNER JOIN cake_category AS b ON a.parent_id = b.id
+    </sql>
+    <select id="selectCakeCategories" resultType="CakeCategory">
+        SELECT
+        a.id ,
+        a.name
+        FROM
+        cake_category AS a
+        <include refid="cakeCategoriesJoin"/>
+    </select>
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.monoya.my.cake.web.api.dao.UserDao">
+    <sql id="userColumns">
+          a.id,
+          a.username,
+          a.password,
+          a.email,
+          a.phone,
+          a.created,
+          a.updated
+    </sql>
+<select id="login" resultType="User">
+    SELECT
+      <include refid="userColumns"/>
+    FROM
+      user AS a
+    WHERE username = #{username}
+      OR email = #{username}
+</select>
+    <select id="exists" resultType="java.lang.Integer">
+        SELECT
+        COUNT(*)
+        FROM
+        user AS a
+        WHERE username = #{username}
+        OR email = #{username}
+    </select>
+    <insert id="addUser">
+          INSERT INTO user(
+                username,
+                password,
+                email,
+                created,
+                updated
+              )
+              VALUES
+                (
+                  #{username},
+                  #{password},
+                  #{email},
+                  #{created},
+                  #{updated}
+                );
+    </insert>
+</mapper>

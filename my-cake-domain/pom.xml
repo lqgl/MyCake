@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>my-cake-dependencies</artifactId>
+        <groupId>com.monoya</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../my-cake-dependencies/pom.xml</relativePath>
+    </parent>
+    <artifactId>my-cake-domain</artifactId>
+    <packaging>jar</packaging>
+    <name>my-cake-domain</name>
+    <dependencies>
+        <dependency>
+            <groupId>com.monoya</groupId>
+            <artifactId>my-cake-commons</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,9 @@
+com\monoya\my\cake\commons\utils\HttpClientUtils.class
+com\monoya\my\cake\commons\validator\BeanValidator.class
+com\monoya\my\cake\commons\utils\RegexpUtils.class
+com\monoya\my\cake\commons\constants\ConstantUtils.class
+com\monoya\my\cake\commons\utils\MapperUtils.class
+com\monoya\my\cake\commons\persistence\PageInfo.class
+com\monoya\my\cake\commons\utils\MapperUtils$1.class
+com\monoya\my\cake\commons\dtos\BaseResult.class
+com\monoya\my\cake\commons\persistence\BaseEntity.class

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.monoya.my.cake.web.admin.dao.CakeDao">
+    <sql id="cakeColumns">
+          a.id,
+          a.category_id AS categoryId,
+          a.cake_name AS cakeName,
+          a.cake_taste AS cakeTaste,
+          a.price,
+          a.url,
+          a.pic,
+          a.cake_detail AS cakeDetail,
+          a.created,
+          a.updated,
+          b.id AS "cakeCategory.id",
+          b.name AS "cakeCategory.name"
+    </sql>
+    <sql id="cakeJoins">
+        LEFT JOIN cake_category AS b ON a.category_id=b.id
+    </sql>
+    <update id="update">
+        UPDATE
+          cake AS a
+        SET
+          a.id=#{id},
+          a.category_id=#{cakeCategory.id},
+          a.cake_name=#{cakeName},
+          a.cake_taste=#{cakeTaste},
+          a.price=#{price},
+          a.url=#{url},
+          a.pic=#{pic},
+          a.cake_detail=#{cakeDetail},
+          a.created=#{created},
+          a.updated=#{updated}
+        WHERE a.id = #{id}
+    </update>
+    <select id="getById" resultType="Cake">
+        SELECT
+        <include refid="cakeColumns"/>
+        FROM cake AS a
+        <include refid="cakeJoins"/>
+        WHERE a.id = #{id}
+    </select>
+    <insert id="insert">
+        INSERT INTO
+        cake(
+            id,
+            category_id,
+            cake_name,
+            cake_taste,
+            price,
+            url,
+            pic,
+            cake_detail,
+            created,
+            updated)
+        VALUES(
+            #{id},
+            #{cakeCategory.id},
+            #{cakeName},
+            #{cakeTaste},
+            #{price},
+            #{url},
+            #{pic},
+            #{cakeDetail},
+            #{created},
+            #{updated})
+    </insert>
+    <delete id="delete">
+        DELETE
+        FROM
+          cake
+        WHERE id = #{id}
+    </delete>
+    <select id="count" resultType="java.lang.Integer">
+        SELECT
+        COUNT(*)
+        FROM cake AS a
+        <where>
+            <if test="cakeName != null and cakeName != ''">
+                AND a.cake_name LIKE CONCAT('%', #{cakeName},'%')
+            </if>
+            <if test="cakeTaste != null and cakeTaste != ''">
+                AND a.cake_taste LIKE CONCAT('%', #{cakeTaste},'%')
+            </if>
+            <if test="cakeDetail != null and cakeDetail != ''">
+                AND a.cake_detail LIKE CONCAT('%', #{cakeDetail},'%')
+            </if>
+        </where>
+    </select>
+    <select id="page" resultType="Cake" parameterType="java.util.Map">
+        SELECT
+        <include refid="cakeColumns"/>
+        FROM cake AS a
+        <include refid="cakeJoins"/>
+        <where>
+            <if test="pageParams.cakeName != null and pageParams.cakeName != ''">
+                AND a.cake_name LIKE CONCAT('%', #{pageParams.cakeName},'%')
+            </if>
+            <if test="pageParams.cakeTaste != null and pageParams.cakeTaste != ''">
+                AND a.cake_taste LIKE CONCAT('%', #{pageParams.cakeTaste},'%')
+            </if>
+            <if test="pageParams.cakeDetail != null and pageParams.cakeDetail != ''">
+                AND a.cake_detail LIKE CONCAT('%', #{pageParams.cakeDetail},'%')
+            </if>
+        </where>
+        LIMIT #{start},#{length}
+    </select>
+    <delete id="deleteMulti">
+        DELETE
+        FROM
+        cake
+        WHERE id IN
+        <foreach collection="array" open="(" close=")" separator="," item="id" >
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

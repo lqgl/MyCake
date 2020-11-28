@@ -1,0 +1,152 @@
+.cont {
+    max-width: 90%;
+    margin: 0 auto;
+    min-width: 1000px;
+}
+.title {
+    line-height: 36px;
+}
+a {
+    text-decoration: none;
+    color: #561801;
+}
+.product_img {
+    float: left;
+    width: 600px;
+}
+#bigpicarea {
+    WIDTH: 600px;
+    HEIGHT: 500px;
+    OVERFLOW: hidden;
+    text-align: center;
+}
+/* product-info */
+.product_info {
+    float: right;
+    width: 400px;
+    line-height: 30px;
+}
+ol, ul {
+    list-style: none;
+}
+.title {
+    line-height: 36px;
+}
+.larger {
+    font-size: larger;
+}
+.bold {
+    font-weight: bold;
+}
+.grey {
+    color: #999;
+}
+.line_top {
+    border-top: #efefef solid 1px;
+    clear: both;
+    height: 1px;
+}
+.larger {
+    font-size: larger;
+}
+/* #pricetext{
+    font-size: larger;
+} */
+.clear {
+    clear: both;
+}
+.product_btn {
+    padding: 3px 8px;
+    width: 140px;
+    background: #fff;
+    border: #ccc solid 1px;
+    font-size: 12px;
+    display: block;
+    margin: 8px 10px 8px 0px;
+    cursor: pointer;
+    float: left;
+}
+.select_on {
+    padding: 3px 8px;
+    background: url(/static/images/select_on.png) right bottom no-repeat;
+    background-size: auto;
+    background-size: 12px;
+    border: #630 solid 1px;
+    display: block;
+    margin: 8px 10px 8px 0px;
+    cursor: pointer;
+    float: left;
+}
+.order_one {
+    width: 32px;
+    text-align: center;
+    border: #561801 solid 1px;
+    height: 22px;
+    position: relative;
+    top: -9px;
+    *top: -7px;
+    margin: 0 2px;
+    font-family: Arial,sans-serif,Tahoma;
+    font-size: 12px;
+    line-height: 15px;
+    overflow: visible;
+    vertical-align: middle;
+}
+/* buy */
+.btn_buy {
+    cursor: pointer;
+    width: 160px;
+    height: 50px;
+    background: #551700;
+    border: #663300 solid 1px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+    color: #fff;
+}
+/* more */
+.product_more {
+    background: #fefefe;
+    padding-top: 20px;
+}
+.table-striped {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table-striped thead td {
+    background-color: #F7F7F7;
+    color: #555;
+    height: 36px;
+    line-height: 36px;
+    padding: 4px 5px;
+}
+.product_bt {
+    border-left: 5px solid #630;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+.title {
+    line-height: 36px;
+}
+.bold {
+    font-weight: bold;
+}
+.product_other {
+    padding: 0 40px;
+    font-size: 14px;
+}
+.small {
+    font-size: 12px;
+}
+.product_other p {
+    width: 33%;
+    float: left;
+}
+br{
+    margin: 15px 0px;
+}

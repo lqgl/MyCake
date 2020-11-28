@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="my-cake-domain" />
+        <module name="my-cake-web-api" />
+        <module name="my-cake-web-ui" />
+        <module name="my-cake-web-admin" />
+        <module name="my-cake-commons" />
+        <module name="my-cake-external" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="my-cake-commons" target="1.8" />
+      <module name="my-cake-dependecies" target="1.5" />
+      <module name="my-cake-dependencies" target="1.8" />
+      <module name="my-cake-dependencies (1) (com.monoya)" target="1.5" />
+      <module name="my-cake-dependencies (2)" target="1.5" />
+      <module name="my-cake-domain" target="1.8" />
+      <module name="my-cake-external" target="1.8" />
+      <module name="my-cake-web-admin" target="1.8" />
+      <module name="my-cake-web-api" target="1.8" />
+      <module name="my-cake-web-ui" target="1.8" />
+      <module name="MyCake" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

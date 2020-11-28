@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.monoya.my.cake.web.api.dao.CakeDao">
+    <sql id="cakeColumns">
+          a.id,
+          a.category_id AS categoryId,
+          a.cake_name AS cakeName,
+          a.cake_taste AS cakeTaste,
+          a.price,
+          a.url,
+          a.pic,
+          a.cake_detail AS cakeDetail,
+          a.created,
+          a.updated,
+          b.id AS "cakeCategory.id",
+          b.name AS "cakeCategory.name"
+    </sql>
+    <sql id="cakeJoins">
+        LEFT JOIN cake_category AS b ON a.category_id=b.id
+    </sql>
+    <sql id="cakeJoins2">
+        LEFT JOIN cake_category AS c ON b.id = c.parent_id
+    </sql>
+
+    <select id="getById" resultType="Cake">
+        SELECT
+        <include refid="cakeColumns"/>
+        FROM cake AS a
+        <include refid="cakeJoins"/>
+        WHERE a.id = #{id}
+    </select>
+
+    <select id="selectByCategoryId" resultType="Cake">
+        SELECT
+          <include refid="cakeColumns" />
+        FROM
+          cake AS a
+          <include refid="cakeJoins"/>
+        WHERE category_id = #{categoryId}
+    </select>
+    <select id="selectAllCakes" resultType="Cake">
+        SELECT
+        <include refid="cakeColumns"/>
+        FROM
+        cake AS a
+        <include refid="cakeJoins"/>
+        <include refid="cakeJoins2"/>
+    </select>
+</mapper>

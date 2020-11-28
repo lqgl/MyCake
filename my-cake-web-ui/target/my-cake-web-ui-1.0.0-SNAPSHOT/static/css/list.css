@@ -1,0 +1,123 @@
+.cont {
+    max-width: 90%;
+    margin: 0 auto;
+    min-width: 1000px;
+}
+.title {
+    line-height: 36px;
+}
+.nav_more ul {
+    margin-left: 70px;
+}
+.nav_more ul li {
+    float: left;
+    line-height: 30px;
+    padding: 0 12px;
+    margin-bottom: 20px;
+}
+div {
+    display: block;
+}
+.line_top {
+    border-top: #efefef solid 1px;
+    clear: both;
+    height: 1px;
+}
+/*table*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.order_table {
+    margin-bottom: 10px;
+    line-height: 22px;
+}
+.table-striped {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody>tr:nth-child(odd)>th {
+    background-color: #fefefe;
+}
+
+.table tbody td {
+    background-color: #ffffff;
+}
+.table td {
+    height: 36px;
+    line-height: 24px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 14px;
+    padding: 4px 5px;
+    vertical-align: middle;
+}
+.table-striped td {
+    height: 36px;
+    line-height: 36px;
+    padding: 4px 5px;
+}
+.table td {
+    text-align: center;
+}
+.td_left {
+    text-align: left;
+}
+.title {
+    line-height: 36px;
+}
+
+.larger {
+    font-size: larger;
+}
+.grey {
+    color: #999;
+    font-size: 14px;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #551700;
+    border-color: #551700;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: #561801;
+}

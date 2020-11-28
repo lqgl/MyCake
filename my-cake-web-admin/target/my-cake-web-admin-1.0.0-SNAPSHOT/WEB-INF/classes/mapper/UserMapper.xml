@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.monoya.my.cake.web.admin.dao.UserDao">
+    <sql id="userColumns">
+        a.id,
+          a.username,
+          a.password,
+          a.email,
+          a.phone,
+          a.created,
+          a.updated
+    </sql>
+    <select id="getByEmail" resultType="User">
+        SELECT
+          <include refid="userColumns"/>
+        FROM USER AS a
+        WHERE a.email = #{email}
+    </select>
+    <update id="update">
+        UPDATE
+          user AS a
+        SET
+          a.id = #{id},
+          a.username = #{username},
+          a.password = #{password},
+          a.email = #{email},
+          a.phone = #{phone},
+          a.created = #{created},
+          a.updated = #{updated}
+        WHERE a.id = #{id}
+    </update>
+    <select id="getById" resultType="User">
+        SELECT
+        <include refid="userColumns"/>
+        FROM USER AS a
+        WHERE a.id = #{id}
+    </select>
+    <insert id="insert">
+        INSERT INTO
+        user(
+          id,
+          username,
+          password,
+          email,
+          phone,
+          created,
+          updated)
+        VALUES(
+            #{id},
+            #{username},
+            #{password},
+            #{email},
+            #{phone},
+            #{created},
+            #{updated})
+    </insert>
+    <delete id="delete">
+        DELETE
+        FROM
+          user
+        WHERE id = #{id}
+    </delete>
+    <select id="count" resultType="java.lang.Integer">
+        SELECT
+         COUNT(*)
+        FROM USER AS a
+        <where>
+            <if test="username != null and username != ''">
+                AND a.username LIKE CONCAT('%', #{username},'%')
+            </if>
+            <if test="phone != null and phone != ''">
+                AND a.phone LIKE CONCAT('%', #{phone},'%')
+            </if>
+            <if test="email != null and email != ''">
+                AND a.email LIKE CONCAT('%', #{email},'%')
+            </if>
+        </where>
+    </select>
+    <select id="page" resultType="User" parameterType="java.util.Map">
+        SELECT
+        <include refid="userColumns"/>
+        FROM
+        user AS a
+        <where>
+        <if test="pageParams.username != null and pageParams.username != ''">
+            AND a.username LIKE CONCAT('%', #{pageParams.username},'%')
+        </if>
+        <if test="pageParams.phone != null and pageParams.phone != ''">
+            AND a.phone LIKE CONCAT('%', #{pageParams.phone},'%')
+        </if>
+        <if test="pageParams.email != null and pageParams.email != ''">
+            AND a.email LIKE CONCAT('%', #{pageParams.email},'%')
+        </if>
+        </where>
+        LIMIT #{start},#{length}
+    </select>
+    <delete id="deleteMulti">
+        DELETE
+        FROM
+          USER
+        WHERE id IN
+        <foreach collection="array" open="(" close=")" separator="," item="id" >
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

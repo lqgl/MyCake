@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/MyCake.iml" filepath="$PROJECT_DIR$/.idea/MyCake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-cake-commons/my-cake-commons.iml" filepath="$PROJECT_DIR$/my-cake-commons/my-cake-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-cake-dependencies/my-cake-dependencies.iml" filepath="$PROJECT_DIR$/my-cake-dependencies/my-cake-dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-cake-domain/my-cake-domain.iml" filepath="$PROJECT_DIR$/my-cake-domain/my-cake-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-cake-external/my-cake-external.iml" filepath="$PROJECT_DIR$/my-cake-external/my-cake-external.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-cake-web-admin/my-cake-web-admin.iml" filepath="$PROJECT_DIR$/my-cake-web-admin/my-cake-web-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-cake-web-api/my-cake-web-api.iml" filepath="$PROJECT_DIR$/my-cake-web-api/my-cake-web-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-cake-web-ui/my-cake-web-ui.iml" filepath="$PROJECT_DIR$/my-cake-web-ui/my-cake-web-ui.iml" />
+    </modules>
+  </component>
+</project>
